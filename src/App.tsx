@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import { Route } from 'react-router-dom';
-import { Grid, Input, Label, Menu } from 'semantic-ui-react';
+import { Grid, Input } from 'semantic-ui-react';
 import { Container } from 'semantic-ui-react';
 import { About } from './components/About';
 import './App.css';

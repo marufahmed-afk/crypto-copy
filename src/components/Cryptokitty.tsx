@@ -1,16 +1,7 @@
-import * as _ from 'lodash';
 import * as React from 'react';
-import { Link } from 'react-router-dom';
-import {
-  Button,
-  Container,
-  Divider,
-  Grid,
-  Header,
-  Segment,
-} from 'semantic-ui-react';
+import {Container } from 'semantic-ui-react';
 import * as c from '../cattributes/colors';
-import { isNonNull, randomEnumValue } from '../utils';
+import { isNonNull } from '../utils';
 import { Genes } from './Genes';
 
 export enum BodyType {
@@ -89,7 +80,7 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
     genes: '',
   });
 
-  const { kittyImage, kittyMouth, kittyEye, genes } = cryptoKittyState;
+  const { genes } = cryptoKittyState;
 
   React.useEffect(() => {
     console.log('hello use effect');
@@ -100,6 +91,7 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
     };
 
     fetchGenes();
+     // eslint-disable-next-line
   }, []);
 
   const detectKittyColors = (svgText: string) => {
@@ -130,7 +122,7 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
   };
 
   if (genes === undefined) {
-    return <img src={'src/cattributes/nullcat.svg'} />;
+    return <img src={'src/cattributes/nullcat.svg'} alt='null cat'/>;
   }
 
   let kittyImage1 = genes[`${body}-${pattern}`];
@@ -182,7 +174,7 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
     <Container style={{ position: 'relative' }}>
       {kittyImage1 === null || kittyMouth1 === null || kittyEye1 === null ? (
         <div style={{ position: 'absolute' }}>
-          <img src={'src/cattributes/nullcat.svg'} />
+          <img src={'src/cattributes/nullcat.svg'}  alt='null cat'/>
         </div>
       ) : (
         <div style={{ position: 'absolute' }}>

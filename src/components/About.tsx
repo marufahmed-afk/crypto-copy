@@ -1,16 +1,11 @@
-// tslint:disable:jsx-no-multiline-js
 import * as React from 'react';
-import { Link } from 'react-router-dom';
 
 import {
   Button,
   Container,
-  Divider,
   Grid,
-  Header,
-  Input,
-  Segment,
 } from 'semantic-ui-react';
+
 import {
   BodyType,
   Cryptokitty,
