@@ -7,6 +7,15 @@
   pointer-events: none;
 }
 
+.pos-absolute {
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  height: 300px;
+  width: 300px; */
+  width: 300px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

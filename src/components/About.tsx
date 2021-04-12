@@ -88,6 +88,12 @@ export const About = () => {
               mouth={mouth}
               eye={eye}
               pattern={pattern}
+              colors={[
+                c.Primary[primary],
+                c.Secondary[secondary],
+                c.Tertiary[tertiary],
+                c.EyeColor[eyeColor],
+              ]}
             />
           </Grid.Column>
         </Grid.Row>

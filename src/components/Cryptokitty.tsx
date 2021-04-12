@@ -79,19 +79,6 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
   pattern,
   colors,
 }) => {
-  // constructor(props) {
-  // 	super(props);
-  // 	this.state = {};
-  // 	const body = props.body;
-  // 	const pattern = props.pattern;
-  // 	const mouth = props.mouth;
-  // 	const eye = props.eye;
-
-  // 	const colors = props.colors;
-  // 	this.detectKittyColors = this.detectKittyColors.bind(this);
-  // 	this.render = this.render.bind(this);
-  // }
-
   const [
     cryptoKittyState,
     setCryptoKittyState,
@@ -115,32 +102,32 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
     fetchGenes();
   }, []);
 
-  //   const detectKittyColors = (svgText: string) => {
-  //     const colors = [null, null, null, null];
-  //     for (const color in c.Primary) {
-  //       if (svgText.indexOf(c.Primary[color]) > -1) {
-  //         colors[0] = color;
-  //       }
-  //     }
-  //     for (const color in c.Secondary) {
-  //       if (svgText.indexOf(c.Secondary[color]) > -1) {
-  //         colors[1] = color;
-  //       }
-  //     }
-  //     for (const color in c.Tertiary) {
-  //       if (svgText.indexOf(c.Tertiary[color]) > -1) {
-  //         colors[2] = color;
-  //       }
-  //     }
+  const detectKittyColors = (svgText: string) => {
+    const colors: any = [null, null, null, null];
+    for (const color in c.Primary) {
+      if (svgText?.indexOf(c.Primary[color]) > -1) {
+        colors[0] = color;
+      }
+    }
+    for (const color in c.Secondary) {
+      if (svgText?.indexOf(c.Secondary[color]) > -1) {
+        colors[1] = color;
+      }
+    }
+    for (const color in c.Tertiary) {
+      if (svgText?.indexOf(c.Tertiary[color]) > -1) {
+        colors[2] = color;
+      }
+    }
 
-  //     for (const color in c.EyeColor) {
-  //       if (svgText.indexOf(c.EyeColor[color]) > -1) {
-  //         colors[3] = color;
-  //       }
-  //     }
+    for (const color in c.EyeColor) {
+      if (svgText?.indexOf(c.EyeColor[color]) > -1) {
+        colors[3] = color;
+      }
+    }
 
-  //     return colors;
-  //   };
+    return colors;
+  };
 
   if (genes === undefined) {
     return <img src={'src/cattributes/nullcat.svg'} />;
@@ -152,50 +139,44 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
 
   console.log('kitty images', kittyImage1, kittyMouth1);
 
-  //   const bodyColors = detectKittyColors(kittyImage);
-  //   const eyeColors = detectKittyColors(kittyEye);
-  //   const mouthColors = detectKittyColors(kittyMouth);
+  const bodyColors = detectKittyColors(kittyImage1);
+  const eyeColors = detectKittyColors(kittyEye1);
+  const mouthColors = detectKittyColors(kittyMouth1);
 
-  //   if (isNonNull(bodyColors[0])) {
-  //     kittyImage1 = kittyImage1.replace(
-  //       new RegExp(c.Primary[bodyColors[0]], 'g'),
-  //       colors[0]
-  //     );
-  //     // setCryptoKittyState({...cryptoKittyState,kittyImage:kittyImage1});
-  //   }
+  if (isNonNull(bodyColors[0])) {
+    kittyImage1 = kittyImage1.replace(
+      new RegExp(c.Primary[bodyColors[0]], 'g'),
+      colors && colors[0]
+    );
+  }
 
-  //   if (isNonNull(bodyColors[1])) {
-  //     kittyImage1 = kittyImage1.replace(
-  //       new RegExp(c.Secondary[bodyColors[1]], 'g'),
-  //       colors[1]
-  //     );
-  //     // setCryptoKittyState({...cryptoKittyState,kittyImage:kittyImage1});
-  //   }
+  if (isNonNull(bodyColors[1])) {
+    kittyImage1 = kittyImage1.replace(
+      new RegExp(c.Secondary[bodyColors[1]], 'g'),
+      colors && colors[1]
+    );
+  }
 
-  //   if (isNonNull(eyeColors[3])) {
-  //     kittyEye1 = kittyEye1.replace(
-  //       new RegExp(c.EyeColor[eyeColors[3]], 'g'),
-  //       colors[3]
-  //     );
-  //     // setCryptoKittyState({...cryptoKittyState,kittyEye:kittyEye1});
-  //   }
+  if (isNonNull(eyeColors[3])) {
+    kittyEye1 = kittyEye1.replace(
+      new RegExp(c.EyeColor[eyeColors[3]], 'g'),
+      colors && colors[3]
+    );
+  }
 
-  //   if (isNonNull(bodyColors[2])) {
-  //     kittyImage1 = kittyImage1.replace(
-  //       new RegExp(c.Tertiary[bodyColors[2]], 'g'),
-  //       colors[2]
-  //     );
-  //     // setCryptoKittyState({...cryptoKittyState,kittyImage:kittyImage1});
-  //   }
+  if (isNonNull(bodyColors[2])) {
+    kittyImage1 = kittyImage1.replace(
+      new RegExp(c.Tertiary[bodyColors[2]], 'g'),
+      colors && colors[2]
+    );
+  }
 
-  //   if (isNonNull(mouthColors[0])) {
-  //     kittyMouth1 = kittyMouth1.replace(
-  //       new RegExp(c.Primary[mouthColors[0]], 'g'),
-  //       colors[0]
-  //     );
-  //     // setCryptoKittyState({...cryptoKittyState,kittyMouth:kittyMouth1});
-  //   }
-  // tslint:disable:jsx-no-multiline-js
+  if (isNonNull(mouthColors[0])) {
+    kittyMouth1 = kittyMouth1.replace(
+      new RegExp(c.Primary[mouthColors[0]], 'g'),
+      colors && colors[0]
+    );
+  }
 
   return (
     <Container style={{ position: 'relative' }}>
@@ -205,9 +186,18 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
         </div>
       ) : (
         <div style={{ position: 'absolute' }}>
-          <div dangerouslySetInnerHTML={{ __html: kittyImage1 }} />
-          <div dangerouslySetInnerHTML={{ __html: kittyMouth1 }} />
-          <div dangerouslySetInnerHTML={{ __html: kittyEye1 }} />
+          <div
+            className='pos-absolute'
+            dangerouslySetInnerHTML={{ __html: kittyImage1 }}
+          />
+          <div
+            className='pos-absolute'
+            dangerouslySetInnerHTML={{ __html: kittyMouth1 }}
+          />
+          <div
+            className='pos-absolute'
+            dangerouslySetInnerHTML={{ __html: kittyEye1 }}
+          />
         </div>
       )}
     </Container>
