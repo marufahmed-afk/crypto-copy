@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Container } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import * as c from '../cattributes/colors';
 import { isNonNull } from '../utils';
 import { Genes } from './Genes';
@@ -83,15 +83,14 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
   const { genes } = cryptoKittyState;
 
   React.useEffect(() => {
-    console.log('hello use effect');
     const fetchGenes = async () => {
       const genes = await Genes();
-      console.log(genes, 'GENES');
+
       setCryptoKittyState({ ...cryptoKittyState, genes: genes });
     };
 
     fetchGenes();
-     // eslint-disable-next-line
+    // eslint-disable-next-line
   }, []);
 
   const detectKittyColors = (svgText: string) => {
@@ -122,14 +121,12 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
   };
 
   if (genes === undefined) {
-    return <img src={'src/cattributes/nullcat.svg'} alt='null cat'/>;
+    return <img src={'src/cattributes/nullcat.svg'} alt='null cat' />;
   }
 
   let kittyImage1 = genes[`${body}-${pattern}`];
   let kittyMouth1 = genes[`${mouth}`];
   let kittyEye1 = genes[`${eye}`];
-
-  console.log('kitty images', kittyImage1, kittyMouth1);
 
   const bodyColors = detectKittyColors(kittyImage1);
   const eyeColors = detectKittyColors(kittyEye1);
@@ -174,7 +171,7 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
     <Container style={{ position: 'relative' }}>
       {kittyImage1 === null || kittyMouth1 === null || kittyEye1 === null ? (
         <div style={{ position: 'absolute' }}>
-          <img src={'src/cattributes/nullcat.svg'}  alt='null cat'/>
+          <img src={'src/cattributes/nullcat.svg'} alt='null cat' />
         </div>
       ) : (
         <div style={{ position: 'absolute' }}>
