@@ -34,6 +34,7 @@ export enum MouthType {
   pouty = 'pouty',
   soserious = 'soserious',
   gerbil = 'gerbil',
+  poutmouth='poutmouth'
 }
 
 export enum EyeType {
@@ -70,6 +71,7 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
   pattern,
   colors,
 }) => {
+
   const [
     cryptoKittyState,
     setCryptoKittyState,
@@ -94,6 +96,7 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
   }, []);
 
   const detectKittyColors = (svgText: string) => {
+    //console.log(svgText);
     const colors: any = [null, null, null, null];
     for (const color in c.Primary) {
       if (svgText?.indexOf(c.Primary[color]) > -1) {
@@ -129,8 +132,11 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
   let kittyEye1 = genes[`${eye}`];
 
   const bodyColors = detectKittyColors(kittyImage1);
+  console.log(bodyColors, 'bodycolors');
   const eyeColors = detectKittyColors(kittyEye1);
+  console.log(eyeColors, 'eyecolors');
   const mouthColors = detectKittyColors(kittyMouth1);
+  console.log(mouthColors, 'mouthcolors');
 
   if (isNonNull(bodyColors[0])) {
     kittyImage1 = kittyImage1.replace(
