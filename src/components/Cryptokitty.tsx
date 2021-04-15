@@ -5,25 +5,25 @@ import { isNonNull } from '../utils';
 import { Genes } from './Genes';
 
 export enum BodyType {
-  mainecoon = 'mainecoon',
-  cymric = 'cymric',
-  laperm = 'laperm',
-  munchkin = 'munchkin',
-  sphynx = 'sphynx',
-  ragamuffin = 'ragamuffin',
-  himalayan = 'himalayan',
-  chartreux = 'chartreux',
+  // mainecoon = 'mainecoon',
+  // cymric = 'cymric',
+  // laperm = 'laperm',
+  // munchkin = 'munchkin',
+  // sphynx = 'sphynx',
+  // ragamuffin = 'ragamuffin',
+  // himalayan = 'himalayan',
+  // chartreux = 'chartreux',
   firey = 'firey',
-  orange = 'orange',
+  basic = 'basic',
 }
 
 export enum PatternType {
-  spock = 'spock',
-  tigerpunk = 'tigerpunk',
-  calicool = 'calicool',
-  luckystripe = 'luckystripe',
-  jaguar = 'jaguar',
-  totesbasic = 'totesbasic',
+  // spock = 'spock',
+  // tigerpunk = 'tigerpunk',
+  // calicool = 'calicool',
+  // luckystripe = 'luckystripe',
+  // jaguar = 'jaguar',
+  // totesbasic = 'totesbasic',
   default = 'default',
 }
 
