@@ -59,14 +59,14 @@ export const About = () => {
     tertiary,
     eyeColor,
   } = state;
-  const searchUrlStr = [body, pattern, eye, mouth, primary, secondary].join(
-    '%20'
-  );
-  const kittyFindUrl = `https://www.cryptokitties.co/marketplace/sale?search=${searchUrlStr}`;
+  // const searchUrlStr = [body, pattern, eye, mouth, primary, secondary].join(
+  //   '%20'
+  // );
+  // const kittyFindUrl = `https://www.cryptokitties.co/marketplace/sale?search=${searchUrlStr}`;
 
-  const openKittyUrl = () => {
-    window.open(kittyFindUrl, '_blank');
-  };
+  // const openKittyUrl = () => {
+  //   window.open(kittyFindUrl, '_blank');
+  // };
 
   return (
     <Container>

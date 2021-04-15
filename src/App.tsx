@@ -1,5 +1,5 @@
 import { Route } from 'react-router-dom';
-import { Grid, Input } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 import { Container } from 'semantic-ui-react';
 import { About } from './components/About';
 import './App.css';
