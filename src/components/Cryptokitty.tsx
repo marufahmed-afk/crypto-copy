@@ -13,6 +13,8 @@ export enum BodyType {
   ragamuffin = 'ragamuffin',
   himalayan = 'himalayan',
   chartreux = 'chartreux',
+  firey = 'firey',
+  orange = 'orange',
 }
 
 export enum PatternType {
@@ -22,6 +24,7 @@ export enum PatternType {
   luckystripe = 'luckystripe',
   jaguar = 'jaguar',
   totesbasic = 'totesbasic',
+  default = 'default',
 }
 
 export enum MouthType {
@@ -34,7 +37,8 @@ export enum MouthType {
   pouty = 'pouty',
   soserious = 'soserious',
   gerbil = 'gerbil',
-  poutmouth='poutmouth'
+  poutmouth = 'poutmouth',
+  tongueout = 'tongueout',
 }
 
 export enum EyeType {
@@ -46,6 +50,8 @@ export enum EyeType {
   crazy = 'crazy',
   thicccbrowz = 'thicccbrowz',
   googly = 'googly',
+  sadeyes = 'sadeyes',
+  orangeeyes = 'orangeeyes',
 }
 
 interface ICryptokittyState {
@@ -71,7 +77,6 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
   pattern,
   colors,
 }) => {
-
   const [
     cryptoKittyState,
     setCryptoKittyState,
@@ -100,6 +105,7 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
     const colors: any = [null, null, null, null];
     for (const color in c.Primary) {
       if (svgText?.indexOf(c.Primary[color]) > -1) {
+        console.log('GOT IN');
         colors[0] = color;
       }
     }
@@ -124,7 +130,7 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
   };
 
   if (genes === undefined) {
-    return <img src={'src/cattributes/nullcat.svg'} alt='null cat' />;
+    return <img src={'../cattributes/nullcat.svg'} alt='null cat' />;
   }
 
   let kittyImage1 = genes[`${body}-${pattern}`];
@@ -139,6 +145,11 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
   console.log(mouthColors, 'mouthcolors');
 
   if (isNonNull(bodyColors[0])) {
+    console.log(
+      new RegExp(c.Primary[bodyColors[0]], 'g'),
+      'regex',
+      c.Primary[bodyColors[0]]
+    );
     kittyImage1 = kittyImage1.replace(
       new RegExp(c.Primary[bodyColors[0]], 'g'),
       colors && colors[0]
@@ -177,7 +188,7 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
     <Container style={{ position: 'relative' }}>
       {kittyImage1 === null || kittyMouth1 === null || kittyEye1 === null ? (
         <div style={{ position: 'absolute' }}>
-          <img src={'src/cattributes/nullcat.svg'} alt='null cat' />
+          <img src={'../cattributes/nullcat.svg'} alt='null cat' />
         </div>
       ) : (
         <div style={{ position: 'absolute' }}>
