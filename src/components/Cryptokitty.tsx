@@ -100,6 +100,8 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
     // eslint-disable-next-line
   }, []);
 
+  console.log('test');
+
   const detectKittyColors = (svgText: string) => {
     //console.log(svgText);
     const colors: any = [null, null, null, null];
