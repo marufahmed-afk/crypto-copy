@@ -73,7 +73,7 @@ export const About = () => {
   // };
 
   return (
-    <Container>
+    <Container style={{ maxWidth: 1200, padding: 20 }}>
       <Grid>
         <Grid.Row style={{ height: 300 }}>
           <Grid.Column width={4}>
@@ -100,7 +100,7 @@ export const About = () => {
         </Grid.Row>
 
         <Grid.Row>
-          <div className='ui form' style={{ maxWidth: 700 }}>
+          <div className='ui form'>
             <div className='fields'>
               <label>Body</label>
               {_.map(Object.keys(BodyType), (k) => (
