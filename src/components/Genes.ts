@@ -1,5 +1,11 @@
 // tslint:disable:forin
-import { BodyType, EyeType, MouthType, PatternType } from './Cryptokitty';
+import {
+  BodyType,
+  EyeType,
+  MouthType,
+  ExpressionType,
+  PatternType,
+} from './Cryptokitty';
 
 let map: any = null;
 let initialized = false;
@@ -26,6 +32,12 @@ export const Genes = async () => {
     const svg = await fetch(`/assets/cattributes/mouth/${mt}.svg`);
     map[`${mt}`] = await svg.text();
   }
+
+  for (const ext in ExpressionType) {
+    const svg = await fetch(`/assets/cattributes/expression/${ext}.svg`);
+    map[`${ext}`] = await svg.text();
+  }
+
   initialized = true;
   return map;
 };

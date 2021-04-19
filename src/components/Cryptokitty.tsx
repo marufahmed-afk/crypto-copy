@@ -5,58 +5,50 @@ import { isNonNull } from '../utils';
 import { Genes } from './Genes';
 
 export enum BodyType {
-  // mainecoon = 'mainecoon',
-  // cymric = 'cymric',
-  // laperm = 'laperm',
-  // munchkin = 'munchkin',
-  // sphynx = 'sphynx',
-  // ragamuffin = 'ragamuffin',
-  // himalayan = 'himalayan',
-  // chartreux = 'chartreux',
-  firey = 'firey',
-  basic = 'basic',
+  elemental = 'elemental',
+  beaky = 'beaky',
+  stripy = 'stripy',
+  flappy = 'flappy',
+  leafy = 'leafy',
+  bitten = 'bitten',
+  furry = 'furry',
+  cloudy = 'cloudy',
 }
 
 export enum PatternType {
-  // spock = 'spock',
-  // tigerpunk = 'tigerpunk',
-  // calicool = 'calicool',
-  // luckystripe = 'luckystripe',
-  // jaguar = 'jaguar',
-  // totesbasic = 'totesbasic',
   default = 'default',
 }
 
 export enum MouthType {
-  whixtensions = 'whixtensions',
-  dali = 'dali',
-  saycheese = 'saycheese',
-  beard = 'beard',
+  defaultMouth = 'defaultMouth',
+}
+
+export enum ExpressionType {
+  smile = 'smile',
+  oval = 'oval',
   tongue = 'tongue',
-  happygokitty = 'happygokitty',
-  pouty = 'pouty',
-  soserious = 'soserious',
-  gerbil = 'gerbil',
-  poutmouth = 'poutmouth',
+  smug = 'smug',
   tongueout = 'tongueout',
+  charming = 'charming',
+  smug2 = 'smug2',
+  happy = 'happy',
 }
 
 export enum EyeType {
-  wingtips = 'wingtips',
-  fabulous = 'fabulous',
-  otaku = 'otaku',
-  raisedbrow = 'raisedbrow',
-  simple = 'simple',
-  crazy = 'crazy',
-  thicccbrowz = 'thicccbrowz',
-  googly = 'googly',
-  sadeyes = 'sadeyes',
-  orangeeyes = 'orangeeyes',
+  downward = 'downward',
+  confused1 = 'confused1',
+  evil = 'evil',
+  thunder = 'thunder',
+  mushroom = 'mushroom',
+  tattoo = 'tattoo',
+  beans = 'beans',
+  sleepy = 'sleepy',
 }
 
 interface ICryptokittyState {
   kittyImage?: string;
   kittyMouth?: string;
+  kittyExpression?: string;
   kittyEye?: string;
   genes?: string;
 }
@@ -65,6 +57,7 @@ interface ICryptokittyFeatures {
   colors?: string[];
   body?: BodyType;
   pattern?: PatternType;
+  expression?: ExpressionType;
   mouth?: MouthType;
   eye?: EyeType;
   isSpecial?: boolean;
@@ -75,6 +68,7 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
   mouth,
   eye,
   pattern,
+  expression,
   colors,
 }) => {
   const [
@@ -83,6 +77,7 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
   ] = React.useState<ICryptokittyState>({
     kittyImage: '',
     kittyMouth: '',
+    kittyExpression: '',
     kittyEye: '',
     genes: '',
   });
@@ -137,6 +132,7 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
 
   let kittyImage1 = genes[`${body}-${pattern}`];
   let kittyMouth1 = genes[`${mouth}`];
+  let kittyExpression1 = genes[`${expression}`];
   let kittyEye1 = genes[`${eye}`];
 
   const bodyColors = detectKittyColors(kittyImage1);
@@ -201,6 +197,10 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
           <div
             className='pos-absolute'
             dangerouslySetInnerHTML={{ __html: kittyMouth1 }}
+          />
+          <div
+            className='pos-absolute'
+            dangerouslySetInnerHTML={{ __html: kittyExpression1 }}
           />
           <div
             className='pos-absolute'

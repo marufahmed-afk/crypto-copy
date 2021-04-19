@@ -6,6 +6,7 @@ import {
   BodyType,
   Cryptokitty,
   EyeType,
+  ExpressionType,
   MouthType,
   PatternType,
 } from './Cryptokitty';
@@ -24,6 +25,7 @@ export const About = () => {
     eyeColor: randomKey(c.EyeColor),
     mouth: randomEnumValue(MouthType),
     pattern: randomEnumValue(PatternType),
+    expression: randomEnumValue(ExpressionType),
     primary: randomKey(c.Primary),
     secondary: randomKey(c.Secondary),
     tertiary: randomKey(c.Tertiary),
@@ -43,6 +45,7 @@ export const About = () => {
       eyeColor: randomKey(c.EyeColor),
       mouth: randomEnumValue(MouthType),
       pattern: randomEnumValue(PatternType),
+      expression: randomEnumValue(ExpressionType),
       primary: randomKey(c.Primary),
       secondary: randomKey(c.Secondary),
       tertiary: randomKey(c.Tertiary),
@@ -54,6 +57,7 @@ export const About = () => {
     pattern,
     eye,
     mouth,
+    expression,
     primary,
     secondary,
     tertiary,
@@ -77,6 +81,7 @@ export const About = () => {
               key={2}
               body={body}
               mouth={mouth}
+              expression={expression}
               eye={eye}
               pattern={pattern}
               colors={[
@@ -95,7 +100,7 @@ export const About = () => {
         </Grid.Row>
 
         <Grid.Row>
-          <div className='ui form'>
+          <div className='ui form' style={{ maxWidth: 700 }}>
             <div className='fields'>
               <label>Body</label>
               {_.map(Object.keys(BodyType), (k) => (
@@ -167,6 +172,23 @@ export const About = () => {
               ))}
             </div>
             <div className='fields'>
+              <label>Expression</label>
+              {_.map(Object.keys(ExpressionType), (k) => (
+                <div className='field' key={k}>
+                  <div className='ui radio checkbox'>
+                    <input
+                      value={k}
+                      onClick={onFieldChange}
+                      type='radio'
+                      name='expression'
+                      checked={expression === k}
+                    />
+                    <label>{k}</label>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className='fields'>
               <label>Primary Color</label>
               {_.map(Object.keys(c.Primary), (k) => (
                 <div className='field' key={k}>
@@ -183,7 +205,7 @@ export const About = () => {
                 </div>
               ))}
             </div>
-            {/* <div className='fields'>
+            <div className='fields'>
               <label>Secondary</label>
               {_.map(Object.keys(c.Secondary), (k) => (
                 <div className='field' key={k}>
@@ -200,6 +222,7 @@ export const About = () => {
                 </div>
               ))}
             </div>
+            {/*
             <div className='fields'>
               <label>Tertiary</label>
               {_.map(Object.keys(c.Tertiary), (k) => (

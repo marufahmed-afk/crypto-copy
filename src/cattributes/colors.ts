@@ -8,8 +8,14 @@ export const Primary = {
   greymatter: '#d1dadf',
   oldlace: '#ffebe9',
   cottoncandy: '#ecd1eb',
-  purple: '#a993ca',
-  orange: '#fe9233',
+  fire: '#ff9333',
+  saltedCaramel: '#fe6d00',
+  darkgray: '#3d485a',
+  darkgray2: '#434251',
+  greenish: '#9eb4a1',
+  brownish: '#b49474',
+  grayish: '#646f76',
+  ash: '#38414c',
 };
 
 export const Secondary = {
@@ -18,6 +24,15 @@ export const Secondary = {
   emeraldgreen: '#8be179',
   granitegrey: '#b1aeb9',
   kittencream: '#f7ebda',
+  honey: '#f8e068',
+  orange: '#e1741f',
+  salmon: '#cc5059',
+  lightGray: '#dedee0',
+  lightGreen: '#aac3ad',
+  bluish: '#3fe3f9',
+  browny: '#421d10',
+  cement: '#f2e5e6',
+  whitish: '#e5e5e5',
 };
 
 export const Tertiary = {

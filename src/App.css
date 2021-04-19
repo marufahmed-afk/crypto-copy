@@ -16,6 +16,23 @@
   /* width: 300px; */
 }
 
+.ui.form .fields {
+  /* width: 400px; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 1rem -0.5em 1em;
+}
+
+.ui.form .fields .field {
+  padding-bottom: 1rem;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
