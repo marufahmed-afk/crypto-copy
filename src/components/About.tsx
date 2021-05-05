@@ -52,6 +52,10 @@ export const About = () => {
     });
   };
 
+  // for (let index = 0; index < 5; index++) {
+  //   randomKitty();
+  // }
+
   const {
     body,
     pattern,
@@ -63,14 +67,6 @@ export const About = () => {
     tertiary,
     eyeColor,
   } = state;
-  // const searchUrlStr = [body, pattern, eye, mouth, primary, secondary].join(
-  //   '%20'
-  // );
-  // const kittyFindUrl = `https://www.cryptokitties.co/marketplace/sale?search=${searchUrlStr}`;
-
-  // const openKittyUrl = () => {
-  //   window.open(kittyFindUrl, '_blank');
-  // };
 
   return (
     <Container style={{ maxWidth: 1200, padding: 20 }}>
@@ -94,9 +90,8 @@ export const About = () => {
           </Grid.Column>
         </Grid.Row>
 
-        <Grid.Row>
+        {/* <Grid.Row>
           <Button onClick={randomKitty}> Random gizzy </Button>
-          {/* <Button onClick={openKittyUrl}> Find this gizzy </Button> */}
         </Grid.Row>
 
         <Grid.Row>
@@ -221,8 +216,8 @@ export const About = () => {
                   </div>
                 </div>
               ))}
-            </div>
-            {/*
+            </div> */}
+        {/*
             <div className='fields'>
               <label>Tertiary</label>
               {_.map(Object.keys(c.Tertiary), (k) => (
@@ -257,8 +252,8 @@ export const About = () => {
                 </div>
               ))}
             </div> */}
-          </div>
-        </Grid.Row>
+        {/* </div>
+        </Grid.Row> */}
       </Grid>
     </Container>
   );

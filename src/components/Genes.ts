@@ -15,6 +15,9 @@ export const Genes = async () => {
     return map;
   }
   map = {};
+
+  var t0 = performance.now();
+
   for (const b in BodyType) {
     for (const p in PatternType) {
       const svg = await fetch(`/assets/cattributes/body/${b}-${p}.svg`);
@@ -26,6 +29,8 @@ export const Genes = async () => {
   for (const et in EyeType) {
     const svg = await fetch(`/assets/cattributes/eye/${et}.svg`);
     map[`${et}`] = await svg.text();
+
+    console.log(svg, 'svgg');
   }
 
   for (const mt in MouthType) {
@@ -37,6 +42,10 @@ export const Genes = async () => {
     const svg = await fetch(`/assets/cattributes/expression/${ext}.svg`);
     map[`${ext}`] = await svg.text();
   }
+
+  var t1 = performance.now();
+
+  console.log('Call to doSomething took ' + (t1 - t0) + ' milliseconds.');
 
   initialized = true;
   return map;

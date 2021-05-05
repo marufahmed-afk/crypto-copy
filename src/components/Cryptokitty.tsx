@@ -84,9 +84,15 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
 
   const { genes } = cryptoKittyState;
 
+  const [svgState, setSvgState] = React.useState('');
+
+  const [gizzyArr, setGizzyArr] = React.useState(['dd']);
+
   React.useEffect(() => {
     const fetchGenes = async () => {
       const genes = await Genes();
+
+      // console.log(genes, 'GEnes');
 
       setCryptoKittyState({ ...cryptoKittyState, genes: genes });
     };
@@ -95,7 +101,58 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
     // eslint-disable-next-line
   }, []);
 
-  console.log('test');
+  React.useEffect(() => {
+    console.log('GIzzy array');
+  }, [svgState]);
+
+  // const getImage = async () => {
+  //   const svgMouth = await fetch(`/assets/images/crazy.svg`);
+  //   const svgBody = await fetch(`/assets/images/body.svg`);
+
+  //   const svgMouth2 = await svgMouth.text();
+  //   const svgBody2 = await svgBody.text();
+
+  //   const Mouth = svgMouth2
+  //     .toString()
+  //     .replace('<svg', '<g')
+  //     .replace('/svg>', '/g>');
+
+  //   const result = svgBody2.toString().replace('</svg>', Mouth + '</svg>');
+
+  //   return result;
+  // };
+
+  const getImage = (
+    kittyImage1: any,
+    kittyMouth1: any,
+    kittyExpression1: any,
+    kittyEye1: any
+  ) => {
+    // console.log(kittyImage1, kittyMouth1, kittyExpression1, kittyEye1, 'TEST');
+
+    const Mouth = kittyMouth1
+      .toString()
+      .replace('<svg', '<g')
+      .replace('/svg>', '/g>');
+
+    const Expression = kittyExpression1
+      .toString()
+      .replace('<svg', '<g')
+      .replace('/svg>', '/g>');
+
+    const Eye = kittyEye1
+      .toString()
+      .replace('<svg', '<g')
+      .replace('/svg>', '/g>');
+
+    const result = kittyImage1
+      .toString()
+      .replace('</svg>', Mouth + Expression + Eye + '</svg>');
+
+    // setSvgState(result);
+
+    return result;
+  };
 
   const detectKittyColors = (svgText: string) => {
     //console.log(svgText);
@@ -182,6 +239,13 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
     );
   }
 
+  if (kittyImage1) {
+    const t0 = performance.now();
+    getImage(kittyImage1, kittyMouth1, kittyExpression1, kittyEye1);
+    const t1 = performance.now();
+    console.log(`Call to doSomething took ${t1 - t0} milliseconds.`);
+  }
+
   return (
     <Container style={{ position: 'relative' }}>
       {kittyImage1 === null || kittyMouth1 === null || kittyEye1 === null ? (
@@ -189,24 +253,34 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
           <img src={'../cattributes/nullcat.svg'} alt='null cat' />
         </div>
       ) : (
-        <div style={{ position: 'absolute' }}>
+        <>
+          {/* <div style={{ position: 'absolute' }}>
+            <div
+              className='pos-absolute'
+              dangerouslySetInnerHTML={{ __html: kittyImage1 }}
+            />
+            <div
+              className='pos-absolute'
+              dangerouslySetInnerHTML={{ __html: kittyMouth1 }}
+            />
+            <div
+              className='pos-absolute'
+              dangerouslySetInnerHTML={{ __html: kittyExpression1 }}
+            />
+            <div
+              className='pos-absolute'
+              dangerouslySetInnerHTML={{ __html: kittyEye1 }}
+            />
+          </div> */}
+
           <div
-            className='pos-absolute'
-            dangerouslySetInnerHTML={{ __html: kittyImage1 }}
-          />
-          <div
-            className='pos-absolute'
-            dangerouslySetInnerHTML={{ __html: kittyMouth1 }}
-          />
-          <div
-            className='pos-absolute'
-            dangerouslySetInnerHTML={{ __html: kittyExpression1 }}
-          />
-          <div
-            className='pos-absolute'
-            dangerouslySetInnerHTML={{ __html: kittyEye1 }}
-          />
-        </div>
+            dangerouslySetInnerHTML={{
+              __html:
+                kittyImage1 &&
+                getImage(kittyImage1, kittyMouth1, kittyExpression1, kittyEye1),
+            }}
+          ></div>
+        </>
       )}
     </Container>
   );

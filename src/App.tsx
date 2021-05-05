@@ -3,6 +3,7 @@ import { Grid } from 'semantic-ui-react';
 import { Container } from 'semantic-ui-react';
 import { About } from './components/About';
 import './App.css';
+import Gizzies from './components/Gizzies';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Grid.Row>
             <Grid.Column width={16}>
               <Route path='/' component={About} />
+              <Route path='/gizzies' component={Gizzies} />
             </Grid.Column>
           </Grid.Row>
         </Grid>

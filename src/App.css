@@ -13,7 +13,6 @@
   left: 0;
   width: 300px;
   height: auto;
-  /* width: 300px; */
 }
 
 .ui.form .fields {
@@ -61,4 +60,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.gizzyGrid {
+  display: flex;
+  flex-wrap: wrap;
 }
