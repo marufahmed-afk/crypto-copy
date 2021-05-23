@@ -1,5 +1,4 @@
 export const Primary = {
-  default: '#575757',
   yellow1: '#E3F297',
   yellow2: '#F1F897',
   yellow3: '#FFF897',
@@ -33,8 +32,7 @@ export const Primary = {
 };
 
 export const Secondary = {
-  defaults: '#D4D4D4',
-  yellow1s: '#F0F8CA',
+  yellow1s: '#f0f8ca',
   yellow2s: '#F8FBCA',
   yellow3s: '#FFFBCA',
   yellow4s: '#FFF8CA',
@@ -50,7 +48,7 @@ export const Secondary = {
   pink6s: '#F6D2E7',
   pink7s: '#EDD2F1',
   pink8s: '#E2D1EE',
-  purple1s: '#D9D0EF',
+  purple1s: '#d9d0ef',
   purple2s: '#CAD2F0',
   purple3s: '#CAD7F0',
   purple4s: ' #CAD7F0',
