@@ -63,7 +63,7 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
 
   const [svgState, setSvgState] = React.useState('');
 
-  const [gizzyArr, setGizzyArr] = React.useState(['dd']);
+  // const [gizzyArr, setGizzyArr] = React.useState(['dd']);
 
   React.useEffect(() => {
     const fetchGenes = async () => {
