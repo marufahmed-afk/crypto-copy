@@ -90,7 +90,7 @@ export const About = () => {
           </Grid.Column>
         </Grid.Row>
 
-        {/* <Grid.Row>
+        <Grid.Row>
           <Button onClick={randomKitty}> Random gizzy </Button>
         </Grid.Row>
 
@@ -216,8 +216,8 @@ export const About = () => {
                   </div>
                 </div>
               ))}
-            </div> */}
-        {/*
+            </div>
+
             <div className='fields'>
               <label>Tertiary</label>
               {_.map(Object.keys(c.Tertiary), (k) => (
@@ -251,9 +251,9 @@ export const About = () => {
                   </div>
                 </div>
               ))}
-            </div> */}
-        {/* </div>
-        </Grid.Row> */}
+            </div>
+          </div>
+        </Grid.Row>
       </Grid>
     </Container>
   );

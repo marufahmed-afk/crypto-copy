@@ -5,45 +5,6 @@ const Gizzies = () => {
   return (
     <div className='gizzyGrid'>
       <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
     </div>
   );
 };
