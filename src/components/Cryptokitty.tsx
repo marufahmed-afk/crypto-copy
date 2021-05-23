@@ -5,14 +5,7 @@ import { isNonNull } from '../utils';
 import { Genes } from './Genes';
 
 export enum BodyType {
-  elemental = 'elemental',
-  beaky = 'beaky',
-  stripy = 'stripy',
-  flappy = 'flappy',
-  leafy = 'leafy',
-  bitten = 'bitten',
-  furry = 'furry',
-  cloudy = 'cloudy',
+  body = 'body',
 }
 
 export enum PatternType {
@@ -20,29 +13,15 @@ export enum PatternType {
 }
 
 export enum MouthType {
-  defaultMouth = 'defaultMouth',
+  mouth = 'mouth',
 }
 
 export enum ExpressionType {
-  smile = 'smile',
-  oval = 'oval',
-  tongue = 'tongue',
-  smug = 'smug',
-  tongueout = 'tongueout',
-  charming = 'charming',
-  smug2 = 'smug2',
-  happy = 'happy',
+  expression = 'expression',
 }
 
 export enum EyeType {
-  downward = 'downward',
-  confused1 = 'confused1',
-  evil = 'evil',
-  thunder = 'thunder',
-  mushroom = 'mushroom',
-  tattoo = 'tattoo',
-  beans = 'beans',
-  sleepy = 'sleepy',
+  eyes = 'eyes',
 }
 
 interface ICryptokittyState {
@@ -71,16 +50,14 @@ export const Cryptokitty: React.FC<ICryptokittyFeatures> = ({
   expression,
   colors,
 }) => {
-  const [
-    cryptoKittyState,
-    setCryptoKittyState,
-  ] = React.useState<ICryptokittyState>({
-    kittyImage: '',
-    kittyMouth: '',
-    kittyExpression: '',
-    kittyEye: '',
-    genes: '',
-  });
+  const [cryptoKittyState, setCryptoKittyState] =
+    React.useState<ICryptokittyState>({
+      kittyImage: '',
+      kittyMouth: '',
+      kittyExpression: '',
+      kittyEye: '',
+      genes: '',
+    });
 
   const { genes } = cryptoKittyState;
 

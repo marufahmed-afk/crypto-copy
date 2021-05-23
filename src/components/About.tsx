@@ -218,7 +218,7 @@ export const About = () => {
               ))}
             </div>
 
-            <div className='fields'>
+            {/* <div className='fields'>
               <label>Tertiary</label>
               {_.map(Object.keys(c.Tertiary), (k) => (
                 <div className='field' key={k}>
@@ -234,8 +234,8 @@ export const About = () => {
                   </div>
                 </div>
               ))}
-            </div>
-            <div className='fields'>
+            </div> */}
+            {/* <div className='fields'>
               <label>Eye</label>
               {_.map(Object.keys(c.EyeColor), (k) => (
                 <div className='field' key={k}>
@@ -251,7 +251,7 @@ export const About = () => {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </Grid.Row>
       </Grid>
