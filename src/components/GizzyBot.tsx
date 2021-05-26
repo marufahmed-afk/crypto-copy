@@ -47,15 +47,15 @@ export enum NoseType {
   nose04 = 'nose04',
 }
 
-export enum PawType {
-  paws01 = 'paws01',
+export enum DropshadowType {
+  dropshadow01 = 'dropshadow01',
 }
 
 interface IGizzybotFeatures {
   gizzyBody?: string;
   gizzyMouth?: string;
   gizzyNose?: string;
-  gizzyPaw?: string;
+  gizzyDropshadow?: string;
   gizzyExpression?: string;
   gizzyEye?: string;
   genes?: string;
@@ -68,7 +68,7 @@ interface IGizzybotFeatures {
   expression?: ExpressionType;
   mouth?: MouthType;
   nose?: NoseType;
-  paw?: PawType;
+  dropshadow?: DropshadowType;
   eye?: EyeType;
   isSpecial?: boolean;
 }
@@ -77,7 +77,7 @@ export const GizzyBot: React.FC<IGizzybotFeatures> = ({
   body,
   mouth,
   nose,
-  paw,
+  dropshadow,
   eye,
   pattern,
   expression,
@@ -88,7 +88,7 @@ export const GizzyBot: React.FC<IGizzybotFeatures> = ({
       gizzyBody: '',
       gizzyMouth: '',
       gizzyNose: '',
-      gizzyPaw: '',
+      gizzyDropshadow: '',
       gizzyExpression: '',
       gizzyEye: '',
       genes: '',
@@ -121,7 +121,7 @@ export const GizzyBot: React.FC<IGizzybotFeatures> = ({
     gizzyBody1: any,
     gizzyMouth1: any,
     gizzyNose1: any,
-    gizzyPaw1: any,
+    gizzyDropshadow1: any,
     gizzyExpression1: any,
     gizzyEye1: any
   ) => {
@@ -147,14 +147,22 @@ export const GizzyBot: React.FC<IGizzybotFeatures> = ({
       .replace('<svg', '<g')
       .replace('/svg>', '/g>');
 
-    const Paw = gizzyPaw1
+    // const Dropshadow = gizzyDropshadow1
+    //   .toString()
+    //   .replace('<svg', '<g')
+    //   .replace('/svg>', '/g>');
+
+    const GizzyBody = gizzyBody1
       .toString()
       .replace('<svg', '<g')
       .replace('/svg>', '/g>');
 
-    const result = gizzyBody1
+    const result = gizzyDropshadow1
       .toString()
-      .replace('</svg>', Eye + Mouth + Expression + Nose + Paw + '</svg>');
+      .replace(
+        '</svg>',
+        GizzyBody + Eye + Mouth + Expression + Nose + '</svg>'
+      );
 
     // setSvgState(result);
 
@@ -199,7 +207,7 @@ export const GizzyBot: React.FC<IGizzybotFeatures> = ({
   let gizzyBody1 = genes[`${body}-${pattern}`];
   let gizzyMouth1 = genes[`${mouth}`];
   let gizzyNose1 = genes[`${nose}`];
-  let gizzyPaw1 = genes[`${paw}`];
+  let gizzyDropshadow1 = genes[`${dropshadow}`];
   let gizzyExpression1 = genes[`${expression}`];
   let gizzyEye1 = genes[`${eye}`];
 
@@ -256,7 +264,7 @@ export const GizzyBot: React.FC<IGizzybotFeatures> = ({
       gizzyBody1,
       gizzyMouth1,
       gizzyNose1,
-      gizzyPaw1,
+      gizzyDropshadow1,
       gizzyExpression1,
       gizzyEye1
     );
@@ -299,7 +307,7 @@ export const GizzyBot: React.FC<IGizzybotFeatures> = ({
                   gizzyBody1,
                   gizzyMouth1,
                   gizzyNose1,
-                  gizzyPaw1,
+                  gizzyDropshadow1,
                   gizzyExpression1,
                   gizzyEye1
                 ),

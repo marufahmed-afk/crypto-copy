@@ -10,7 +10,7 @@ import {
   MouthType,
   PatternType,
   NoseType,
-  PawType,
+  DropshadowType,
 } from './GizzyBot';
 
 import * as c from '../attributes/colors';
@@ -27,7 +27,7 @@ export const RandomGizzy = () => {
     eyeColor: randomKey(c.EyeColor),
     mouth: randomEnumValue(MouthType),
     nose: randomEnumValue(NoseType),
-    paw: randomEnumValue(PawType),
+    dropshadow: randomEnumValue(DropshadowType),
     pattern: randomEnumValue(PatternType),
     expression: randomEnumValue(ExpressionType),
     primary: randomKey(c.Primary),
@@ -49,7 +49,7 @@ export const RandomGizzy = () => {
       eyeColor: randomKey(c.EyeColor),
       mouth: randomEnumValue(MouthType),
       nose: randomEnumValue(NoseType),
-      paw: randomEnumValue(PawType),
+      dropshadow: randomEnumValue(DropshadowType),
       pattern: randomEnumValue(PatternType),
       expression: randomEnumValue(ExpressionType),
       primary: randomKey(c.Primary),
@@ -68,7 +68,7 @@ export const RandomGizzy = () => {
     eye,
     mouth,
     nose,
-    paw,
+    dropshadow,
     expression,
     primary,
     secondary,
@@ -86,7 +86,7 @@ export const RandomGizzy = () => {
               body={body}
               mouth={mouth}
               nose={nose}
-              paw={paw}
+              dropshadow={dropshadow}
               expression={expression}
               eye={eye}
               pattern={pattern}

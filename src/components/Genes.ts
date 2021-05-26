@@ -6,7 +6,7 @@ import {
   ExpressionType,
   PatternType,
   NoseType,
-  PawType,
+  DropshadowType,
 } from './GizzyBot';
 
 let map: any = null;
@@ -50,9 +50,9 @@ export const Genes = async () => {
     map[`${ext}`] = await svg.text();
   }
 
-  for (const pt in PawType) {
-    const svg = await fetch(`/assets/gizzyAttributes/paws/${pt}.svg`);
-    map[`${pt}`] = await svg.text();
+  for (const ds in DropshadowType) {
+    const svg = await fetch(`/assets/gizzyAttributes/dropshadow/${ds}.svg`);
+    map[`${ds}`] = await svg.text();
   }
 
   var t1 = performance.now();
