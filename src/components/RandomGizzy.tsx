@@ -4,19 +4,21 @@ import { Button, Container, Grid } from 'semantic-ui-react';
 
 import {
   BodyType,
-  Cryptokitty,
+  GizzyBot,
   EyeType,
   ExpressionType,
   MouthType,
   PatternType,
-} from './Cryptokitty';
+  NoseType,
+  PawType,
+} from './GizzyBot';
 
-import * as c from '../cattributes/colors';
+import * as c from '../attributes/colors';
 import { randomEnumValue, randomKey } from '../utils';
 
 import * as _ from 'lodash';
 
-export const About = () => {
+export const RandomGizzy = () => {
   // tslint:disable-next-line:member-ordering
 
   const [state, setState] = React.useState({
@@ -24,6 +26,8 @@ export const About = () => {
     eye: randomEnumValue(EyeType),
     eyeColor: randomKey(c.EyeColor),
     mouth: randomEnumValue(MouthType),
+    nose: randomEnumValue(NoseType),
+    paw: randomEnumValue(PawType),
     pattern: randomEnumValue(PatternType),
     expression: randomEnumValue(ExpressionType),
     primary: randomKey(c.Primary),
@@ -38,12 +42,14 @@ export const About = () => {
     });
   };
 
-  const randomKitty = () => {
+  const randomGizzy = () => {
     setState({
       body: randomEnumValue(BodyType),
       eye: randomEnumValue(EyeType),
       eyeColor: randomKey(c.EyeColor),
       mouth: randomEnumValue(MouthType),
+      nose: randomEnumValue(NoseType),
+      paw: randomEnumValue(PawType),
       pattern: randomEnumValue(PatternType),
       expression: randomEnumValue(ExpressionType),
       primary: randomKey(c.Primary),
@@ -53,7 +59,7 @@ export const About = () => {
   };
 
   // for (let index = 0; index < 5; index++) {
-  //   randomKitty();
+  //   randomGizzy();
   // }
 
   const {
@@ -61,6 +67,8 @@ export const About = () => {
     pattern,
     eye,
     mouth,
+    nose,
+    paw,
     expression,
     primary,
     secondary,
@@ -73,10 +81,12 @@ export const About = () => {
       <Grid>
         <Grid.Row style={{ height: 300 }}>
           <Grid.Column width={4}>
-            <Cryptokitty
+            <GizzyBot
               key={2}
               body={body}
               mouth={mouth}
+              nose={nose}
+              paw={paw}
               expression={expression}
               eye={eye}
               pattern={pattern}
@@ -91,7 +101,7 @@ export const About = () => {
         </Grid.Row>
 
         <Grid.Row>
-          <Button onClick={randomKitty}> Random gizzy </Button>
+          <Button onClick={randomGizzy}> Random gizzy </Button>
         </Grid.Row>
 
         <Grid.Row>

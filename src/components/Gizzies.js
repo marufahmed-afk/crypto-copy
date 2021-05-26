@@ -1,10 +1,10 @@
 import React from 'react';
-import { About } from './About';
+import { RandomGizzy } from './RandomGizzy';
 
 const Gizzies = () => {
   return (
     <div className='gizzyGrid'>
-      <About />
+      <RandomGizzy />
     </div>
   );
 };

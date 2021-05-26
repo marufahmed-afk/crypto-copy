@@ -1,7 +1,7 @@
 import { Route } from 'react-router-dom';
 import { Grid } from 'semantic-ui-react';
 import { Container } from 'semantic-ui-react';
-import { About } from './components/About';
+import { RandomGizzy } from './components/RandomGizzy';
 import './App.css';
 import Gizzies from './components/Gizzies';
 
@@ -23,7 +23,7 @@ function App() {
           </Grid.Row>
           <Grid.Row>
             <Grid.Column width={16}>
-              <Route path='/' component={About} />
+              <Route path='/' component={RandomGizzy} />
               <Route path='/gizzies' component={Gizzies} />
             </Grid.Column>
           </Grid.Row>

@@ -5,7 +5,9 @@ import {
   MouthType,
   ExpressionType,
   PatternType,
-} from './Cryptokitty';
+  NoseType,
+  PawType,
+} from './GizzyBot';
 
 let map: any = null;
 let initialized = false;
@@ -20,27 +22,37 @@ export const Genes = async () => {
 
   for (const b in BodyType) {
     for (const p in PatternType) {
-      const svg = await fetch(`/assets/cattributes/body/${b}-${p}.svg`);
+      const svg = await fetch(`/assets/gizzyAttributes/body/${b}-${p}.svg`);
 
       map[`${b}-${p}`] = await svg.text();
     }
   }
 
   for (const et in EyeType) {
-    const svg = await fetch(`/assets/cattributes/eye/${et}.svg`);
+    const svg = await fetch(`/assets/gizzyAttributes/eye/${et}.svg`);
     map[`${et}`] = await svg.text();
 
     console.log(svg, 'svgg');
   }
 
   for (const mt in MouthType) {
-    const svg = await fetch(`/assets/cattributes/mouth/${mt}.svg`);
+    const svg = await fetch(`/assets/gizzyAttributes/mouth/${mt}.svg`);
     map[`${mt}`] = await svg.text();
   }
 
+  for (const nt in NoseType) {
+    const svg = await fetch(`/assets/gizzyAttributes/nose/${nt}.svg`);
+    map[`${nt}`] = await svg.text();
+  }
+
   for (const ext in ExpressionType) {
-    const svg = await fetch(`/assets/cattributes/expression/${ext}.svg`);
+    const svg = await fetch(`/assets/gizzyAttributes/expression/${ext}.svg`);
     map[`${ext}`] = await svg.text();
+  }
+
+  for (const pt in PawType) {
+    const svg = await fetch(`/assets/gizzyAttributes/paws/${pt}.svg`);
+    map[`${pt}`] = await svg.text();
   }
 
   var t1 = performance.now();
