@@ -35,8 +35,6 @@ export enum ExpressionType {
 
 export enum EyeType {
   eyes01 = 'eyes01',
-  eyes02 = 'eyes02',
-  eyes03 = 'eyes03',
   eyes04 = 'eyes04',
 }
 
