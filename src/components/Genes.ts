@@ -21,11 +21,15 @@ export const Genes = async () => {
   var t0 = performance.now();
 
   for (const b in BodyType) {
-    for (const p in PatternType) {
-      const svg = await fetch(`/assets/gizzyAttributes/body/${b}-${p}.svg`);
+    const svg = await fetch(`/assets/gizzyAttributes/body/${b}.svg`);
 
-      map[`${b}-${p}`] = await svg.text();
-    }
+    map[`${b}`] = await svg.text();
+  }
+
+  for (const p in PatternType) {
+    const svg = await fetch(`/assets/gizzyAttributes/pattern/${p}.svg`);
+
+    map[`${p}`] = await svg.text();
   }
 
   for (const et in EyeType) {

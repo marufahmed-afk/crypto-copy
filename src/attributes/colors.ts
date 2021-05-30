@@ -29,6 +29,9 @@ export const Primary = {
   blue4: '#97e197',
   blue5: '#afe597',
   blue6: '#c5e897',
+  grey1: '#808080',
+  grey2: '#3A414B',
+  grey3: '#575757',
 };
 
 export const Secondary = {
@@ -62,6 +65,9 @@ export const Secondary = {
   blue4s: '#d6f2ca',
   blue5s: '#e1f3ca',
   blue6s: '#f0f8ca',
+  new01: '#F2F2F2',
+  new02: '#F69391',
+  new03: '#D4D4D4',
 };
 
 export const Tertiary = {

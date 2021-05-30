@@ -3,20 +3,20 @@ import { Container } from 'semantic-ui-react';
 import * as c from '../attributes/colors';
 import { isNonNull } from '../utils';
 import { Genes } from './Genes';
-import ReactHtmlParser, {
-  processNodes,
-  convertNodeToElement,
-} from 'react-html-parser';
 
 export enum BodyType {
   body01 = 'body01',
   body02 = 'body02',
   body03 = 'body03',
   body04 = 'body04',
+  body05 = 'body05',
+  body06 = 'body06',
 }
 
 export enum PatternType {
-  default = 'default',
+  patternless = 'patternless',
+  pattern01 = 'pattern01',
+  pattern02 = 'pattern02',
 }
 
 export enum MouthType {
@@ -35,10 +35,10 @@ export enum ExpressionType {
 
 export enum EyeType {
   eyes01 = 'eyes01',
+  eyes02 = 'eyes02',
+  eyes03 = 'eyes03',
   eyes04 = 'eyes04',
   eyes05 = 'eyes05',
-  eyes06 = 'eyes06',
-  eyes07 = 'eyes07',
 }
 
 export enum NoseType {
@@ -54,6 +54,7 @@ export enum DropshadowType {
 
 interface IGizzybotState {
   gizzyBody?: string;
+  gizzyPattern?: string;
   gizzyMouth?: string;
   gizzyNose?: string;
   gizzyDropshadow?: string;
@@ -87,6 +88,7 @@ export const GizzyBot: React.FC<IGizzybotFeatures> = ({
   const [cryptogizzyState, setCryptogizzyState] =
     React.useState<IGizzybotState>({
       gizzyBody: '',
+      gizzyPattern: '',
       gizzyMouth: '',
       gizzyNose: '',
       gizzyDropshadow: '',
@@ -120,6 +122,7 @@ export const GizzyBot: React.FC<IGizzybotFeatures> = ({
 
   const getBody = (
     gizzyBody1: any,
+    gizzyPattern1: any,
     gizzyMouth1: any,
     gizzyNose1: any,
     gizzyDropshadow1: any,
@@ -158,11 +161,16 @@ export const GizzyBot: React.FC<IGizzybotFeatures> = ({
       .replace('<svg', '<g')
       .replace('/svg>', '/g>');
 
+    const GizzyPattern = gizzyPattern1
+      .toString()
+      .replace('<svg', '<g')
+      .replace('/svg>', '/g>');
+
     const result = gizzyDropshadow1
       .toString()
       .replace(
         '</svg>',
-        GizzyBody + Eye + Mouth + Expression + Nose + '</svg>'
+        GizzyBody + GizzyPattern + Eye + Mouth + Expression + Nose + '</svg>'
       );
 
     // setSvgState(result);
@@ -205,7 +213,8 @@ export const GizzyBot: React.FC<IGizzybotFeatures> = ({
     );
   }
 
-  let gizzyBody1 = genes[`${body}-${pattern}`];
+  let gizzyBody1 = genes[`${body}`];
+  let gizzyPattern1 = genes[`${pattern}`];
   let gizzyMouth1 = genes[`${mouth}`];
   let gizzyNose1 = genes[`${nose}`];
   let gizzyDropshadow1 = genes[`${dropshadow}`];
@@ -263,6 +272,7 @@ export const GizzyBot: React.FC<IGizzybotFeatures> = ({
     const t0 = performance.now();
     getBody(
       gizzyBody1,
+      gizzyPattern1,
       gizzyMouth1,
       gizzyNose1,
       gizzyDropshadow1,
@@ -306,6 +316,7 @@ export const GizzyBot: React.FC<IGizzybotFeatures> = ({
                 gizzyBody1 &&
                 getBody(
                   gizzyBody1,
+                  gizzyPattern1,
                   gizzyMouth1,
                   gizzyNose1,
                   gizzyDropshadow1,
