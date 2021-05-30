@@ -175,6 +175,23 @@ export const RandomGizzy = () => {
               ))}
             </div>
             <div className='fields'>
+              <label>Mouth</label>
+              {_.map(Object.keys(NoseType), (k) => (
+                <div className='field' key={k}>
+                  <div className='ui radio checkbox'>
+                    <input
+                      value={k}
+                      onClick={onFieldChange}
+                      type='radio'
+                      name='nose'
+                      checked={nose === k}
+                    />
+                    <label>{k}</label>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className='fields'>
               <label>Expression</label>
               {_.map(Object.keys(ExpressionType), (k) => (
                 <div className='field' key={k}>
