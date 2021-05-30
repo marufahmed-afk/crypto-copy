@@ -38,6 +38,9 @@ export enum EyeType {
   eyes02 = 'eyes02',
   eyes03 = 'eyes03',
   eyes04 = 'eyes04',
+  eyes05 = 'eyes05',
+  eyes06 = 'eyes06',
+  eyes07 = 'eyes07',
 }
 
 export enum NoseType {
@@ -51,7 +54,7 @@ export enum PawType {
   paws01 = 'paws01',
 }
 
-interface IGizzybotFeatures {
+interface IGizzybotState {
   gizzyBody?: string;
   gizzyMouth?: string;
   gizzyNose?: string;
@@ -84,7 +87,7 @@ export const GizzyBot: React.FC<IGizzybotFeatures> = ({
   colors,
 }) => {
   const [cryptogizzyState, setCryptogizzyState] =
-    React.useState<IGizzybotFeatures>({
+    React.useState<IGizzybotState>({
       gizzyBody: '',
       gizzyMouth: '',
       gizzyNose: '',
