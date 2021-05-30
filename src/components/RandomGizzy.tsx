@@ -79,26 +79,24 @@ export const RandomGizzy = () => {
   return (
     <Container style={{ maxWidth: 1200, padding: 20 }}>
       <Grid>
-        <Grid.Row style={{ height: 300 }}>
-          <Grid.Column width={4}>
-            <GizzyBot
-              key={2}
-              body={body}
-              mouth={mouth}
-              nose={nose}
-              dropshadow={dropshadow}
-              expression={expression}
-              eye={eye}
-              pattern={pattern}
-              colors={[
-                c.Primary[primary],
-                c.Secondary[secondary],
-                c.Tertiary[tertiary],
-                c.EyeColor[eyeColor],
-              ]}
-            />
-          </Grid.Column>
-        </Grid.Row>
+        <div style={{ width: 300 }}>
+          <GizzyBot
+            key={2}
+            body={body}
+            mouth={mouth}
+            nose={nose}
+            dropshadow={dropshadow}
+            expression={expression}
+            eye={eye}
+            pattern={pattern}
+            colors={[
+              c.Primary[primary],
+              c.Secondary[secondary],
+              c.Tertiary[tertiary],
+              c.EyeColor[eyeColor],
+            ]}
+          />
+        </div>
 
         <Grid.Row>
           <Button onClick={randomGizzy}> Random gizzy </Button>
