@@ -243,7 +243,7 @@ export const RandomGizzy = () => {
               ))}
             </div>
 
-            {/* <div className='fields'>
+            <div className='fields'>
               <label>Tertiary</label>
               {_.map(Object.keys(c.Tertiary), (k) => (
                 <div className='field' key={k}>
@@ -259,7 +259,7 @@ export const RandomGizzy = () => {
                   </div>
                 </div>
               ))}
-            </div> */}
+            </div>
             {/* <div className='fields'>
               <label>Eye</label>
               {_.map(Object.keys(c.EyeColor), (k) => (
