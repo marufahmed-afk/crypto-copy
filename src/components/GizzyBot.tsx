@@ -11,19 +11,20 @@ export enum BodyType {
   body04 = 'body04',
   body05 = 'body05',
   body06 = 'body06',
+  body07 = 'body07',
 }
 
 export enum PatternType {
   patternless = 'patternless',
   pattern01 = 'pattern01',
   pattern02 = 'pattern02',
+  pattern03 = 'pattern03',
+  pattern04 = 'pattern04',
+  pattern05 = 'pattern05',
 }
 
 export enum MouthType {
   mouth01 = 'mouth01',
-  mouth02 = 'mouth02',
-  mouth03 = 'mouth03',
-  mouth04 = 'mouth04',
 }
 
 export enum ExpressionType {
@@ -31,6 +32,8 @@ export enum ExpressionType {
   expression02 = 'expression02',
   expression03 = 'expression03',
   expression04 = 'expression04',
+  expression05 = 'expression05',
+  expression06 = 'expression06',
 }
 
 export enum EyeType {
@@ -39,6 +42,8 @@ export enum EyeType {
   eyes03 = 'eyes03',
   eyes04 = 'eyes04',
   eyes05 = 'eyes05',
+  eyes06 = 'eyes06',
+  eyes07 = 'eyes07',
 }
 
 export enum NoseType {
