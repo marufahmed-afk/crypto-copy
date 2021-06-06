@@ -32,6 +32,7 @@ export const Primary = {
   grey1: '#808080',
   grey2: '#3a414b',
   grey3: '#575757',
+  grey4: '#666f75',
 };
 
 export const Secondary = {
