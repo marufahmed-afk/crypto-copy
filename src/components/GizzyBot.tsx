@@ -16,6 +16,8 @@ export enum BodyType {
 
 export enum PatternType {
   patternless = 'patternless',
+  patternless01 = 'patternless01',
+  patternless02 = 'patternless02',
   pattern01 = 'pattern01',
   pattern02 = 'pattern02',
   pattern03 = 'pattern03',
